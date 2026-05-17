@@ -270,6 +270,108 @@ ssh pi_wan
 
 ---
 
+# 13. Contrôle d’accès Tailscale (Grants / ACL)
+
+Par défaut, tous les appareils d’un réseau Tailscale peuvent communiquer entre eux.
+
+Pour renforcer la sécurité du homelab, des règles d’accès (`grants`) ont été mises en place afin de :
+
+- autoriser uniquement l’accès au Raspberry Pi ;
+- empêcher les communications directes entre les autres appareils ;
+- limiter les ports accessibles.
+
+---
+
+# Objectif du contrôle d’accès
+
+Architecture souhaitée :
+
+```text
+PC Windows --------> Raspberry Pi
+Téléphone ---------> Raspberry Pi
+
+PC Windows -X-> Téléphone
+Téléphone -X-> PC Windows
+```
+
+Les appareils clients peuvent accéder au serveur, mais pas communiquer entre eux.
+
+---
+
+# Configuration des Grants
+
+Dans :
+
+```text
+Tailscale Admin Console
+→ Access controls
+```
+
+Modification du fichier de policy :
+
+```json
+"grants": [
+	{
+		"src": ["kevin.alsac@gmail.com"],
+		"dst": ["100.x.x.x"],
+		"ip": ["tcp:22", "tcp:443"]
+	}
+],
+```
+
+---
+
+# Explication des règles
+
+| Élément   | Description                 |
+| --------- | --------------------------- |
+| `src`     | utilisateur autorisé        |
+| `dst`     | Raspberry Pi (IP Tailscale) |
+| `tcp:22`  | autorise SSH                |
+| `tcp:443` | autorise HTTPS              |
+
+---
+
+# Ports volontairement bloqués
+
+Les autres protocoles et ports ne sont pas autorisés :
+
+- ping (`ICMP`) ;
+- communications entre clients ;
+- services non explicitement déclarés.
+
+Exemple :
+
+```text
+PC → Raspberry Pi : OK
+Téléphone → Raspberry Pi : OK
+PC ↔ Téléphone : BLOQUÉ
+Ping : BLOQUÉ
+```
+
+---
+
+# Approche sécurité utilisée
+
+Cette configuration applique un principe de :
+
+```text
+Least privilege
+```
+
+C’est-à-dire :
+
+> n’autoriser que les accès strictement nécessaires.
+
+Cela permet :
+
+- de réduire la surface d’attaque ;
+- d’éviter les communications inutiles ;
+- d’appliquer une logique Zero Trust simple ;
+- de segmenter les accès du réseau privé Tailscale.
+
+---
+
 # Résultat final
 
 Le Raspberry Pi dispose maintenant :
@@ -278,4 +380,6 @@ Le Raspberry Pi dispose maintenant :
 - d’un accès SSH sécurisé ;
 - d’un accès distant privé via Tailscale ;
 - d’aucune exposition publique sur Internet ;
+- d’ACLs réseau restrictives ;
+- d’un contrôle précis des appareils autorisés ;
 - d’une architecture réseau simplifiée et sécurisée.
