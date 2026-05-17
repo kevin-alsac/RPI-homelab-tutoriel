@@ -239,12 +239,12 @@ notepad $env:USERPROFILE\.ssh\config
 Ajouter :
 
 ```sshconfig
-Host pi-lan
+Host pi_lan
     HostName 192.168.1.50
     User pi_admin
     IdentityFile ~/.ssh/id_ed25519
 
-Host pi-wan
+Host pi_wan
     HostName 100.x.x.x
     User pi_admin
     IdentityFile ~/.ssh/id_ed25519
@@ -257,7 +257,7 @@ Host pi-wan
 ## Connexion LAN
 
 ```bash
-ssh pi-lan
+ssh pi_lan
 ```
 
 ---
@@ -265,7 +265,7 @@ ssh pi-lan
 ## Connexion Tailscale
 
 ```bash
-ssh pi-wan
+ssh pi_wan
 ```
 
 ---
