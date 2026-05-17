@@ -1,4 +1,4 @@
-# 07 - Nextcloud
+# 06 - Nextcloud
 
 Deploiement de Nextcloud avec PostgreSQL et Redis via Docker Compose.
 

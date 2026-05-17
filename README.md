@@ -116,9 +116,8 @@ mon-homelab-rpi5/
 │   ├── 📄 03_deverouillage_manuel_luks.md
 │   ├── 📄 04_reseau_secu.md
 │   ├── 📄 05_docker_apps.md
-│   ├── 📄 06_reverse_proxy.md
-│   ├── 📄 07_nextcloud.md
-│   └── 📄 08_sauvegardes.md
+│   ├── 📄 06_nextcloud.md
+│   └── 📄 07_sauvegardes.md
 │
 └── 📂 docker/
     └── 📄 docker-compose.yml
@@ -133,8 +132,7 @@ mon-homelab-rpi5/
 - [ ] [03 - Déverrouillage manuel LUKS](docs/03_deverouillage_manuel_luks.md)
 - [ ] [04 - Réseau et sécurité](docs/04_reseau_secu.md)
 - [ ] [05 - Docker et applications](docs/05_docker_apps.md)
-- [ ] [06 - Reverse proxy HTTPS](docs/06_reverse_proxy.md)
-- [ ] [07 - Nextcloud](docs/07_nextcloud.md)
-- [ ] [08 - Sauvegardes](docs/08_sauvegardes.md)
+- [ ] [06 - Nextcloud](docs/06_nextcloud.md)
+- [ ] [07 - Sauvegardes](docs/07_sauvegardes.md)
 
 ---
