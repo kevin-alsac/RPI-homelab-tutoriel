@@ -314,7 +314,7 @@ Modification du fichier de policy :
 	{
 		"src": ["adressemail@domaine.com"],
 		"dst": ["100.x.x.x"],
-		"ip": ["tcp:22", "tcp:443"]
+		"ip": ["tcp:22", "tcp:443", "tcp:8080"]
 	}
 ],
 ```
