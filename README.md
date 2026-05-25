@@ -118,7 +118,8 @@ mon-homelab-rpi5/
     ├── 📄 05_docker_apps.md
     ├── 📄 06_nextcloud.md
     ├── 📄 07_nginx.md
-    └── 📄 08_sauvegardes.md
+    ├── 📄 08_client_nextcloud.md
+    └── 📄 09_sauvegardes.md
 ```
 
 ---
@@ -132,6 +133,7 @@ mon-homelab-rpi5/
 - [ ] [05 - Docker et applications](docs/05_docker_apps.md)
 - [ ] [06 - Nextcloud](docs/06_nextcloud.md)
 - [ ] [07 - NGINX](docs/07_nginx.md)
-- [ ] [08 - Sauvegardes](docs/08_sauvegardes.md)
+- [ ] [08 - Client Nextcloud PC et Android](docs/08_client_nextcloud.md)
+- [ ] [09 - Sauvegardes](docs/09_sauvegardes.md)
 
 ---
