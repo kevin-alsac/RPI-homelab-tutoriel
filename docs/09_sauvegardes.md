@@ -342,8 +342,8 @@ Les dossiers synchronisés sont :
 
 ```text
 Dossier Partagé
-ileane
-kevin
+data 1
+data 2
 ```
 
 Le NAS conserve une copie miroir de ces dossiers grâce à :
